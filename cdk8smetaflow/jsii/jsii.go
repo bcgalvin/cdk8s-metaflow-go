@@ -14,7 +14,7 @@ import (
 	cdk8splus22 "github.com/cdk8s-team/cdk8s-plus-go/cdk8splus22/v2/jsii"
 )
 
-//go:embed cdk8s-metaflow-0.0.1.tgz
+//go:embed cdk8s-metaflow-0.0.2.tgz
 var tarball []byte
 
 // Initialize loads the necessary packages in the @jsii/kernel to support the enclosing module.
@@ -26,5 +26,5 @@ func Initialize() {
 	constructs.Initialize()
 
 	// Load this library into the kernel
-	_jsii_.Load("cdk8s-metaflow", "0.0.1", tarball)
+	_jsii_.Load("cdk8s-metaflow", "0.0.2", tarball)
 }
