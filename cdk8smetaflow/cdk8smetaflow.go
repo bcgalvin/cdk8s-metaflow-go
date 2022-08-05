@@ -291,25 +291,29 @@ func (m *jsiiProxy_MetadataDatabase) ToString() *string {
 }
 
 // Experimental.
+type MetadataDatabaseEnvOptions struct {
+	// Experimental.
+	Host *string `field:"optional" json:"host" yaml:"host"`
+	// Experimental.
+	Password *string `field:"optional" json:"password" yaml:"password"`
+	// Experimental.
+	Port *float64 `field:"optional" json:"port" yaml:"port"`
+	// Experimental.
+	User *string `field:"optional" json:"user" yaml:"user"`
+}
+
+// Experimental.
 type MetadataDatabaseOptions struct {
 	// Experimental.
 	Architecture *string `field:"optional" json:"architecture" yaml:"architecture"`
 	// Experimental.
 	Auth *DatabaseAuthOptions `field:"optional" json:"auth" yaml:"auth"`
 	// Experimental.
-	Host *string `field:"optional" json:"host" yaml:"host"`
-	// Experimental.
 	Metrics *DatabaseMetricsOptions `field:"optional" json:"metrics" yaml:"metrics"`
-	// Experimental.
-	Password *string `field:"optional" json:"password" yaml:"password"`
-	// Experimental.
-	Port *float64 `field:"optional" json:"port" yaml:"port"`
 	// Experimental.
 	Replication *DatabaseReplicationOptions `field:"optional" json:"replication" yaml:"replication"`
 	// Experimental.
 	Resources *DatabaseResourcesOptions `field:"optional" json:"resources" yaml:"resources"`
-	// Experimental.
-	User *string `field:"optional" json:"user" yaml:"user"`
 	// Experimental.
 	VolumePermissions *DatabaseVolumePermissionsOptions `field:"optional" json:"volumePermissions" yaml:"volumePermissions"`
 }
@@ -440,7 +444,7 @@ type MetaflowServiceOptions struct {
 	// Experimental.
 	Ingress *IngressOptions `field:"optional" json:"ingress" yaml:"ingress"`
 	// Experimental.
-	Metadatadb *MetadataDatabaseOptions `field:"optional" json:"metadatadb" yaml:"metadatadb"`
+	Metadatadb *MetadataDatabaseEnvOptions `field:"optional" json:"metadatadb" yaml:"metadatadb"`
 	// Experimental.
 	NameOverride *string `field:"optional" json:"nameOverride" yaml:"nameOverride"`
 	// Experimental.
@@ -591,7 +595,7 @@ type MetaflowUIOptions struct {
 	// Experimental.
 	Ingress *IngressOptions `field:"optional" json:"ingress" yaml:"ingress"`
 	// Experimental.
-	Metadatadb *MetadataDatabaseOptions `field:"optional" json:"metadatadb" yaml:"metadatadb"`
+	Metadatadb *MetadataDatabaseEnvOptions `field:"optional" json:"metadatadb" yaml:"metadatadb"`
 	// Experimental.
 	NameOverride *string `field:"optional" json:"nameOverride" yaml:"nameOverride"`
 	// Experimental.

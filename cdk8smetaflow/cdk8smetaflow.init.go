@@ -99,6 +99,10 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
+		"cdk8s-metaflow.MetadataDatabaseEnvOptions",
+		reflect.TypeOf((*MetadataDatabaseEnvOptions)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
 		"cdk8s-metaflow.MetadataDatabaseOptions",
 		reflect.TypeOf((*MetadataDatabaseOptions)(nil)).Elem(),
 	)
