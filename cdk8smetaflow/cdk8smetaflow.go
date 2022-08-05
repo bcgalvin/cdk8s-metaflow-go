@@ -577,11 +577,11 @@ func (m *jsiiProxy_MetaflowUI) ToString() *string {
 // Experimental.
 type MetaflowUIOptions struct {
 	// Experimental.
-	Env *map[string]*string `field:"required" json:"env" yaml:"env"`
-	// Experimental.
 	Affinity *k8s.Affinity `field:"optional" json:"affinity" yaml:"affinity"`
 	// Experimental.
 	Autoscaling *AutoscalingOptions `field:"optional" json:"autoscaling" yaml:"autoscaling"`
+	// Experimental.
+	Env *map[string]*string `field:"optional" json:"env" yaml:"env"`
 	// Experimental.
 	EnvFrom *[]*k8s.EnvFromSource `field:"optional" json:"envFrom" yaml:"envFrom"`
 	// Experimental.
