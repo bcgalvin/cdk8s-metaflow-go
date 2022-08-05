@@ -579,8 +579,6 @@ type MetaflowUIOptions struct {
 	// Experimental.
 	Env *map[string]*string `field:"required" json:"env" yaml:"env"`
 	// Experimental.
-	MetaflowDatastoreSysrootS3 *string `field:"required" json:"metaflowDatastoreSysrootS3" yaml:"metaflowDatastoreSysrootS3"`
-	// Experimental.
 	Affinity *k8s.Affinity `field:"optional" json:"affinity" yaml:"affinity"`
 	// Experimental.
 	Autoscaling *AutoscalingOptions `field:"optional" json:"autoscaling" yaml:"autoscaling"`
@@ -596,6 +594,8 @@ type MetaflowUIOptions struct {
 	Ingress *IngressOptions `field:"optional" json:"ingress" yaml:"ingress"`
 	// Experimental.
 	Metadatadb *MetadataDatabaseEnvOptions `field:"optional" json:"metadatadb" yaml:"metadatadb"`
+	// Experimental.
+	MetaflowDatastoreSysrootS3 *string `field:"optional" json:"metaflowDatastoreSysrootS3" yaml:"metaflowDatastoreSysrootS3"`
 	// Experimental.
 	NameOverride *string `field:"optional" json:"nameOverride" yaml:"nameOverride"`
 	// Experimental.
