@@ -3,7 +3,7 @@ package cdk8smetaflow
 
 
 // Experimental.
-type PostgresAddonProps struct {
+type HelmPostgresAddonProps struct {
 	// Experimental.
 	ChartVersion *string `field:"required" json:"chartVersion" yaml:"chartVersion"`
 	// Experimental.

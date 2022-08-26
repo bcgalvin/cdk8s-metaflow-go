@@ -2,7 +2,7 @@
 package cdk8smetaflow
 
 import (
-	"github.com/cdk8s-team/cdk8s-plus-go/cdk8splus22/v2"
+	"github.com/cdk8s-team/cdk8s-plus-go/cdk8splus21/v2"
 )
 
 // Experimental.
@@ -21,14 +21,14 @@ type MetaflowChartProps struct {
 	// Experimental.
 	ImageTag *string `field:"required" json:"imageTag" yaml:"imageTag"`
 	// Experimental.
-	ServiceAccount cdk8splus22.ServiceAccount `field:"required" json:"serviceAccount" yaml:"serviceAccount"`
-	// Experimental.
-	ServiceType cdk8splus22.ServiceType `field:"required" json:"serviceType" yaml:"serviceType"`
+	ServicePort *cdk8splus21.ServicePort `field:"required" json:"servicePort" yaml:"servicePort"`
 	// Experimental.
 	EnvVars *map[string]*string `field:"optional" json:"envVars" yaml:"envVars"`
 	// Experimental.
 	InitImage *string `field:"optional" json:"initImage" yaml:"initImage"`
 	// Experimental.
 	InitImageTag *string `field:"optional" json:"initImageTag" yaml:"initImageTag"`
+	// Experimental.
+	ServiceAccount cdk8splus21.IServiceAccount `field:"optional" json:"serviceAccount" yaml:"serviceAccount"`
 }
 

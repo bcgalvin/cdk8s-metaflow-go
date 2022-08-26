@@ -11,10 +11,10 @@ import (
 
 	constructs  "github.com/aws/constructs-go/constructs/v10/jsii"
 	cdk8s       "github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2/jsii"
-	cdk8splus22 "github.com/cdk8s-team/cdk8s-plus-go/cdk8splus22/v2/jsii"
+	cdk8splus21 "github.com/cdk8s-team/cdk8s-plus-go/cdk8splus21/v2/jsii"
 )
 
-//go:embed cdk8s-metaflow-0.0.9.tgz
+//go:embed cdk8s-metaflow-0.0.10.tgz
 var tarball []byte
 
 // Initialize loads the necessary packages in the @jsii/kernel to support the enclosing module.
@@ -22,9 +22,9 @@ var tarball []byte
 func Initialize() {
 	// Ensure all dependencies are initialized
 	cdk8s.Initialize()
-	cdk8splus22.Initialize()
+	cdk8splus21.Initialize()
 	constructs.Initialize()
 
 	// Load this library into the kernel
-	_jsii_.Load("cdk8s-metaflow", "0.0.9", tarball)
+	_jsii_.Load("cdk8s-metaflow", "0.0.10", tarball)
 }

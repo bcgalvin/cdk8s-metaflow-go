@@ -6,24 +6,23 @@ import (
 	_init_ "github.com/bcgalvin/cdk8s-metaflow-go/cdk8smetaflow/jsii"
 
 	"github.com/aws/constructs-go/constructs/v10"
-	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
 )
 
 // Experimental.
-type PostgresAddon interface {
+type LocalPostgresAddon interface {
 	IAddon
 	// Experimental.
 	Name() *string
 	// Experimental.
-	Install(scope constructs.Construct) cdk8s.Helm
+	Install(scope constructs.Construct) constructs.Construct
 }
 
-// The jsii proxy struct for PostgresAddon
-type jsiiProxy_PostgresAddon struct {
+// The jsii proxy struct for LocalPostgresAddon
+type jsiiProxy_LocalPostgresAddon struct {
 	jsiiProxy_IAddon
 }
 
-func (j *jsiiProxy_PostgresAddon) Name() *string {
+func (j *jsiiProxy_LocalPostgresAddon) Name() *string {
 	var returns *string
 	_jsii_.Get(
 		j,
@@ -35,13 +34,13 @@ func (j *jsiiProxy_PostgresAddon) Name() *string {
 
 
 // Experimental.
-func NewPostgresAddon(props *PostgresAddonProps) PostgresAddon {
+func NewLocalPostgresAddon(props *LocalPostgresAddonProps) LocalPostgresAddon {
 	_init_.Initialize()
 
-	j := jsiiProxy_PostgresAddon{}
+	j := jsiiProxy_LocalPostgresAddon{}
 
 	_jsii_.Create(
-		"cdk8s-metaflow.PostgresAddon",
+		"cdk8s-metaflow.LocalPostgresAddon",
 		[]interface{}{props},
 		&j,
 	)
@@ -50,32 +49,32 @@ func NewPostgresAddon(props *PostgresAddonProps) PostgresAddon {
 }
 
 // Experimental.
-func NewPostgresAddon_Override(p PostgresAddon, props *PostgresAddonProps) {
+func NewLocalPostgresAddon_Override(l LocalPostgresAddon, props *LocalPostgresAddonProps) {
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"cdk8s-metaflow.PostgresAddon",
+		"cdk8s-metaflow.LocalPostgresAddon",
 		[]interface{}{props},
-		p,
+		l,
 	)
 }
 
-func PostgresAddon_NAME() *string {
+func LocalPostgresAddon_NAME() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
-		"cdk8s-metaflow.PostgresAddon",
+		"cdk8s-metaflow.LocalPostgresAddon",
 		"NAME",
 		&returns,
 	)
 	return returns
 }
 
-func (p *jsiiProxy_PostgresAddon) Install(scope constructs.Construct) cdk8s.Helm {
-	var returns cdk8s.Helm
+func (l *jsiiProxy_LocalPostgresAddon) Install(scope constructs.Construct) constructs.Construct {
+	var returns constructs.Construct
 
 	_jsii_.Invoke(
-		p,
+		l,
 		"install",
 		[]interface{}{scope},
 		&returns,

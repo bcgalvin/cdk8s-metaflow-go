@@ -8,14 +8,12 @@ import (
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/bcgalvin/cdk8s-metaflow-go/cdk8smetaflow/internal"
 	"github.com/cdk8s-team/cdk8s-core-go/cdk8s/v2"
-	"github.com/cdk8s-team/cdk8s-plus-go/cdk8splus22/v2"
+	"github.com/cdk8s-team/cdk8s-plus-go/cdk8splus21/v2"
 )
 
 // Experimental.
-type MetaflowServiceChart interface {
+type MetaflowService interface {
 	cdk8s.Chart
-	// Experimental.
-	Deployment() cdk8splus22.Deployment
 	// Labels applied to all resources in this chart.
 	//
 	// This is an immutable copy.
@@ -28,7 +26,7 @@ type MetaflowServiceChart interface {
 	// Experimental.
 	Node() constructs.Node
 	// Experimental.
-	Service() cdk8splus22.Service
+	ServiceAccount() cdk8splus21.IServiceAccount
 	// Create a dependency between this Chart and other constructs.
 	//
 	// These can be other ApiObjects, Charts, or custom.
@@ -62,22 +60,12 @@ type MetaflowServiceChart interface {
 	ToString() *string
 }
 
-// The jsii proxy struct for MetaflowServiceChart
-type jsiiProxy_MetaflowServiceChart struct {
+// The jsii proxy struct for MetaflowService
+type jsiiProxy_MetaflowService struct {
 	internal.Type__cdk8sChart
 }
 
-func (j *jsiiProxy_MetaflowServiceChart) Deployment() cdk8splus22.Deployment {
-	var returns cdk8splus22.Deployment
-	_jsii_.Get(
-		j,
-		"deployment",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_MetaflowServiceChart) Labels() *map[string]*string {
+func (j *jsiiProxy_MetaflowService) Labels() *map[string]*string {
 	var returns *map[string]*string
 	_jsii_.Get(
 		j,
@@ -87,7 +75,7 @@ func (j *jsiiProxy_MetaflowServiceChart) Labels() *map[string]*string {
 	return returns
 }
 
-func (j *jsiiProxy_MetaflowServiceChart) Namespace() *string {
+func (j *jsiiProxy_MetaflowService) Namespace() *string {
 	var returns *string
 	_jsii_.Get(
 		j,
@@ -97,7 +85,7 @@ func (j *jsiiProxy_MetaflowServiceChart) Namespace() *string {
 	return returns
 }
 
-func (j *jsiiProxy_MetaflowServiceChart) Node() constructs.Node {
+func (j *jsiiProxy_MetaflowService) Node() constructs.Node {
 	var returns constructs.Node
 	_jsii_.Get(
 		j,
@@ -107,11 +95,11 @@ func (j *jsiiProxy_MetaflowServiceChart) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_MetaflowServiceChart) Service() cdk8splus22.Service {
-	var returns cdk8splus22.Service
+func (j *jsiiProxy_MetaflowService) ServiceAccount() cdk8splus21.IServiceAccount {
+	var returns cdk8splus21.IServiceAccount
 	_jsii_.Get(
 		j,
-		"service",
+		"serviceAccount",
 		&returns,
 	)
 	return returns
@@ -119,13 +107,13 @@ func (j *jsiiProxy_MetaflowServiceChart) Service() cdk8splus22.Service {
 
 
 // Experimental.
-func NewMetaflowServiceChart(scope constructs.Construct, name *string, props *MetaflowChartProps) MetaflowServiceChart {
+func NewMetaflowService(scope constructs.Construct, name *string, props *MetaflowChartProps) MetaflowService {
 	_init_.Initialize()
 
-	j := jsiiProxy_MetaflowServiceChart{}
+	j := jsiiProxy_MetaflowService{}
 
 	_jsii_.Create(
-		"cdk8s-metaflow.MetaflowServiceChart",
+		"cdk8s-metaflow.MetaflowService",
 		[]interface{}{scope, name, props},
 		&j,
 	)
@@ -134,11 +122,11 @@ func NewMetaflowServiceChart(scope constructs.Construct, name *string, props *Me
 }
 
 // Experimental.
-func NewMetaflowServiceChart_Override(m MetaflowServiceChart, scope constructs.Construct, name *string, props *MetaflowChartProps) {
+func NewMetaflowService_Override(m MetaflowService, scope constructs.Construct, name *string, props *MetaflowChartProps) {
 	_init_.Initialize()
 
 	_jsii_.Create(
-		"cdk8s-metaflow.MetaflowServiceChart",
+		"cdk8s-metaflow.MetaflowService",
 		[]interface{}{scope, name, props},
 		m,
 	)
@@ -148,13 +136,13 @@ func NewMetaflowServiceChart_Override(m MetaflowServiceChart, scope constructs.C
 //
 // We do attribute detection since we can't reliably use 'instanceof'.
 // Experimental.
-func MetaflowServiceChart_IsChart(x interface{}) *bool {
+func MetaflowService_IsChart(x interface{}) *bool {
 	_init_.Initialize()
 
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"cdk8s-metaflow.MetaflowServiceChart",
+		"cdk8s-metaflow.MetaflowService",
 		"isChart",
 		[]interface{}{x},
 		&returns,
@@ -181,13 +169,13 @@ func MetaflowServiceChart_IsChart(x interface{}) *bool {
 //
 // Returns: true if `x` is an object created from a class which extends `Construct`.
 // Experimental.
-func MetaflowServiceChart_IsConstruct(x interface{}) *bool {
+func MetaflowService_IsConstruct(x interface{}) *bool {
 	_init_.Initialize()
 
 	var returns *bool
 
 	_jsii_.StaticInvoke(
-		"cdk8s-metaflow.MetaflowServiceChart",
+		"cdk8s-metaflow.MetaflowService",
 		"isConstruct",
 		[]interface{}{x},
 		&returns,
@@ -198,13 +186,13 @@ func MetaflowServiceChart_IsConstruct(x interface{}) *bool {
 
 // Finds the chart in which a node is defined.
 // Experimental.
-func MetaflowServiceChart_Of(c constructs.IConstruct) cdk8s.Chart {
+func MetaflowService_Of(c constructs.IConstruct) cdk8s.Chart {
 	_init_.Initialize()
 
 	var returns cdk8s.Chart
 
 	_jsii_.StaticInvoke(
-		"cdk8s-metaflow.MetaflowServiceChart",
+		"cdk8s-metaflow.MetaflowService",
 		"of",
 		[]interface{}{c},
 		&returns,
@@ -213,7 +201,7 @@ func MetaflowServiceChart_Of(c constructs.IConstruct) cdk8s.Chart {
 	return returns
 }
 
-func (m *jsiiProxy_MetaflowServiceChart) AddDependency(dependencies ...constructs.IConstruct) {
+func (m *jsiiProxy_MetaflowService) AddDependency(dependencies ...constructs.IConstruct) {
 	args := []interface{}{}
 	for _, a := range dependencies {
 		args = append(args, a)
@@ -226,7 +214,7 @@ func (m *jsiiProxy_MetaflowServiceChart) AddDependency(dependencies ...construct
 	)
 }
 
-func (m *jsiiProxy_MetaflowServiceChart) GenerateObjectName(apiObject cdk8s.ApiObject) *string {
+func (m *jsiiProxy_MetaflowService) GenerateObjectName(apiObject cdk8s.ApiObject) *string {
 	var returns *string
 
 	_jsii_.Invoke(
@@ -239,7 +227,7 @@ func (m *jsiiProxy_MetaflowServiceChart) GenerateObjectName(apiObject cdk8s.ApiO
 	return returns
 }
 
-func (m *jsiiProxy_MetaflowServiceChart) ToJson() *[]interface{} {
+func (m *jsiiProxy_MetaflowService) ToJson() *[]interface{} {
 	var returns *[]interface{}
 
 	_jsii_.Invoke(
@@ -252,7 +240,7 @@ func (m *jsiiProxy_MetaflowServiceChart) ToJson() *[]interface{} {
 	return returns
 }
 
-func (m *jsiiProxy_MetaflowServiceChart) ToString() *string {
+func (m *jsiiProxy_MetaflowService) ToString() *string {
 	var returns *string
 
 	_jsii_.Invoke(
